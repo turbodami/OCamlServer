@@ -1,0 +1,8 @@
+(library
+    (name deter)
+    (modules deter))
+
+(executable
+    (name server)
+    (modules server)
+    (libraries deter lwt yojson cohttp cohttp-lwt-unix))

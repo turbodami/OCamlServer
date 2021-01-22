@@ -1,0 +1,116 @@
+# dune build server.exe --profile release
+# OCAMLPARAM: unset
+# Workspace root: /home/tolwiz/Code/OCamlServer/server
+$ /usr/bin/nproc > /tmp/dune169a4e.output 2> /dev/null
+# Auto-detected concurrency: 4
+# disable binary cache
+$ /usr/bin/ocamlc.opt -config > /tmp/duneba1c7a.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Release
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/home/tolwiz/.opam/default/lib/toplevel"
+#  ; ocaml_bin = External "/usr/bin"
+#  ; ocaml = Ok External "/home/tolwiz/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/usr/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/usr/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/usr/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/usr/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/home/tolwiz/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/usr/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/home/tolwiz/Code/OCamlServer/server"
+#        ; "INSIDE_DUNE" :
+#            "/home/tolwiz/Code/OCamlServer/server/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/tolwiz/Code/OCamlServer/server/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/home/tolwiz/Code/OCamlServer/server/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/tolwiz/Code/OCamlServer/server/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/home/tolwiz/.opam/default/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.08.1"
+#      ; standard_library_default = "/usr/lib/ocaml"
+#      ; standard_library = "/usr/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "x86_64-linux-gnu-gcc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "x86_64-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "x86_64-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; cc_profile = [ "-pg" ]
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "x86_64-linux-gnu-as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = true
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = false
+#      ; exec_magic_number = "Caml1999X025"
+#      ; cmi_magic_number = "Caml1999I025"
+#      ; cmo_magic_number = "Caml1999O025"
+#      ; cma_magic_number = "Caml1999A025"
+#      ; cmx_magic_number = "Caml1999Y025"
+#      ; cmxa_magic_number = "Caml1999Z025"
+#      ; ast_impl_magic_number = "Caml1999M025"
+#      ; ast_intf_magic_number = "Caml1999N025"
+#      ; cmxs_magic_number = "Caml1999D025"
+#      ; cmt_magic_number = "Caml1999T025"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I .deter.objs/byte -no-alias-deps -o .deter.objs/byte/deter.cmo -c -impl deter.ml)
+$ (cd _build/default && /usr/bin/ocamlopt.opt -w -40 -g -I .deter.objs/byte -I .deter.objs/native -intf-suffix .ml -no-alias-deps -o .deter.objs/native/deter.cmx -c -impl deter.ml)
+$ (cd _build/default && /usr/bin/ocamlopt.opt -w -40 -g -a -o deter.cmxa .deter.objs/native/deter.cmx)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I .server.eobjs/byte -I /home/tolwiz/.opam/default/lib/angstrom -I /home/tolwiz/.opam/default/lib/astring -I /home/tolwiz/.opam/default/lib/base -I /home/tolwiz/.opam/default/lib/base/base_internalhash_types -I /home/tolwiz/.opam/default/lib/base/caml -I /home/tolwiz/.opam/default/lib/base/shadow_stdlib -I /home/tolwiz/.opam/default/lib/base64 -I /home/tolwiz/.opam/default/lib/bigarray-compat -I /home/tolwiz/.opam/default/lib/bigstringaf -I /home/tolwiz/.opam/default/lib/biniou -I /home/tolwiz/.opam/default/lib/bytes -I /home/tolwiz/.opam/default/lib/cohttp -I /home/tolwiz/.opam/default/lib/cohttp-lwt -I /home/tolwiz/.opam/default/lib/cohttp-lwt-unix -I /home/tolwiz/.opam/default/lib/conduit -I /home/tolwiz/.opam/default/lib/conduit-lwt -I /home/tolwiz/.opam/default/lib/conduit-lwt-unix -I /home/tolwiz/.opam/default/lib/domain-name -I /home/tolwiz/.opam/default/lib/easy-format -I /home/tolwiz/.opam/default/lib/fieldslib -I /home/tolwiz/.opam/default/lib/fmt -I /home/tolwiz/.opam/default/lib/ipaddr -I /home/tolwiz/.opam/default/lib/ipaddr-sexp -I /home/tolwiz/.opam/default/lib/ipaddr/unix -I /home/tolwiz/.opam/default/lib/logs -I /home/tolwiz/.opam/default/lib/lwt -I /home/tolwiz/.opam/default/lib/lwt/unix -I /home/tolwiz/.opam/default/lib/macaddr -I /home/tolwiz/.opam/default/lib/magic-mime -I /home/tolwiz/.opam/default/lib/mmap -I /home/tolwiz/.opam/default/lib/ocplib-endian -I /home/tolwiz/.opam/default/lib/ocplib-endian/bigstring -I /home/tolwiz/.opam/default/lib/parsexp -I /home/tolwiz/.opam/default/lib/ppx_sexp_conv/runtime-lib -I /home/tolwiz/.opam/default/lib/re -I /home/tolwiz/.opam/default/lib/result -I /home/tolwiz/.opam/default/lib/seq -I /home/tolwiz/.opam/default/lib/sexplib -I /home/tolwiz/.opam/default/lib/sexplib0 -I /home/tolwiz/.opam/default/lib/stdlib-shims -I /home/tolwiz/.opam/default/lib/stringext -I /home/tolwiz/.opam/default/lib/uri -I /home/tolwiz/.opam/default/lib/uri-sexp -I /home/tolwiz/.opam/default/lib/uri/services -I /home/tolwiz/.opam/default/lib/yojson -I /usr/lib/ocaml/threads -I .deter.objs/byte -I .deter.objs/native -no-alias-deps -o .server.eobjs/byte/dune__exe__Server.cmo -c -impl server.ml)
+$ (cd _build/default && /usr/bin/ocamlopt.opt -w -40 -g -I .server.eobjs/byte -I .server.eobjs/native -I /home/tolwiz/.opam/default/lib/angstrom -I /home/tolwiz/.opam/default/lib/astring -I /home/tolwiz/.opam/default/lib/base -I /home/tolwiz/.opam/default/lib/base/base_internalhash_types -I /home/tolwiz/.opam/default/lib/base/caml -I /home/tolwiz/.opam/default/lib/base/shadow_stdlib -I /home/tolwiz/.opam/default/lib/base64 -I /home/tolwiz/.opam/default/lib/bigarray-compat -I /home/tolwiz/.opam/default/lib/bigstringaf -I /home/tolwiz/.opam/default/lib/biniou -I /home/tolwiz/.opam/default/lib/bytes -I /home/tolwiz/.opam/default/lib/cohttp -I /home/tolwiz/.opam/default/lib/cohttp-lwt -I /home/tolwiz/.opam/default/lib/cohttp-lwt-unix -I /home/tolwiz/.opam/default/lib/conduit -I /home/tolwiz/.opam/default/lib/conduit-lwt -I /home/tolwiz/.opam/default/lib/conduit-lwt-unix -I /home/tolwiz/.opam/default/lib/domain-name -I /home/tolwiz/.opam/default/lib/easy-format -I /home/tolwiz/.opam/default/lib/fieldslib -I /home/tolwiz/.opam/default/lib/fmt -I /home/tolwiz/.opam/default/lib/ipaddr -I /home/tolwiz/.opam/default/lib/ipaddr-sexp -I /home/tolwiz/.opam/default/lib/ipaddr/unix -I /home/tolwiz/.opam/default/lib/logs -I /home/tolwiz/.opam/default/lib/lwt -I /home/tolwiz/.opam/default/lib/lwt/unix -I /home/tolwiz/.opam/default/lib/macaddr -I /home/tolwiz/.opam/default/lib/magic-mime -I /home/tolwiz/.opam/default/lib/mmap -I /home/tolwiz/.opam/default/lib/ocplib-endian -I /home/tolwiz/.opam/default/lib/ocplib-endian/bigstring -I /home/tolwiz/.opam/default/lib/parsexp -I /home/tolwiz/.opam/default/lib/ppx_sexp_conv/runtime-lib -I /home/tolwiz/.opam/default/lib/re -I /home/tolwiz/.opam/default/lib/result -I /home/tolwiz/.opam/default/lib/seq -I /home/tolwiz/.opam/default/lib/sexplib -I /home/tolwiz/.opam/default/lib/sexplib0 -I /home/tolwiz/.opam/default/lib/stdlib-shims -I /home/tolwiz/.opam/default/lib/stringext -I /home/tolwiz/.opam/default/lib/uri -I /home/tolwiz/.opam/default/lib/uri-sexp -I /home/tolwiz/.opam/default/lib/uri/services -I /home/tolwiz/.opam/default/lib/yojson -I /usr/lib/ocaml/threads -I .deter.objs/byte -I .deter.objs/native -intf-suffix .ml -no-alias-deps -o .server.eobjs/native/dune__exe__Server.cmx -c -impl server.ml)
+$ (cd _build/default && /usr/bin/ocamlopt.opt -w -40 -g -o server.exe deter.cmxa /home/tolwiz/.opam/default/lib/result/result.cmxa /home/tolwiz/.opam/default/lib/lwt/lwt.cmxa /home/tolwiz/.opam/default/lib/easy-format/easy_format.cmxa /home/tolwiz/.opam/default/lib/biniou/biniou.cmxa /home/tolwiz/.opam/default/lib/yojson/yojson.cmxa /home/tolwiz/.opam/default/lib/re/re.cmxa /home/tolwiz/.opam/default/lib/stringext/stringext.cmxa /home/tolwiz/.opam/default/lib/bigarray-compat/bigarray_compat.cmxa /home/tolwiz/.opam/default/lib/bigstringaf/bigstringaf.cmxa -I /home/tolwiz/.opam/default/lib/bigstringaf /home/tolwiz/.opam/default/lib/angstrom/angstrom.cmxa /home/tolwiz/.opam/default/lib/uri/uri.cmxa /home/tolwiz/.opam/default/lib/sexplib0/sexplib0.cmxa /home/tolwiz/.opam/default/lib/ppx_sexp_conv/runtime-lib/ppx_sexp_conv_lib.cmxa /home/tolwiz/.opam/default/lib/uri-sexp/uri_sexp.cmxa /home/tolwiz/.opam/default/lib/base/base_internalhash_types/base_internalhash_types.cmxa -I /home/tolwiz/.opam/default/lib/base/base_internalhash_types /home/tolwiz/.opam/default/lib/base/caml/caml.cmxa /home/tolwiz/.opam/default/lib/base/shadow_stdlib/shadow_stdlib.cmxa /home/tolwiz/.opam/default/lib/base/base.cmxa -I /home/tolwiz/.opam/default/lib/base /home/tolwiz/.opam/default/lib/fieldslib/fieldslib.cmxa /home/tolwiz/.opam/default/lib/base64/base64.cmxa /home/tolwiz/.opam/default/lib/stdlib-shims/stdlib_shims.cmxa /home/tolwiz/.opam/default/lib/cohttp/cohttp.cmxa /home/tolwiz/.opam/default/lib/fmt/fmt.cmxa /home/tolwiz/.opam/default/lib/logs/logs.cmxa /home/tolwiz/.opam/default/lib/logs/logs_lwt.cmxa /usr/lib/ocaml/unix.cmxa -I /usr/lib/ocaml /usr/lib/ocaml/bigarray.cmxa -I /usr/lib/ocaml /home/tolwiz/.opam/default/lib/parsexp/parsexp.cmxa /home/tolwiz/.opam/default/lib/sexplib/sexplib.cmxa /home/tolwiz/.opam/default/lib/macaddr/macaddr.cmxa /home/tolwiz/.opam/default/lib/astring/astring.cmxa /home/tolwiz/.opam/default/lib/domain-name/domain_name.cmxa /home/tolwiz/.opam/default/lib/ipaddr/ipaddr.cmxa /home/tolwiz/.opam/default/lib/ipaddr-sexp/ipaddr_sexp.cmxa /home/tolwiz/.opam/default/lib/conduit/conduit.cmxa /home/tolwiz/.opam/default/lib/conduit-lwt/conduit_lwt.cmxa /home/tolwiz/.opam/default/lib/mmap/mmap.cmxa /home/tolwiz/.opam/default/lib/ocplib-endian/ocplib_endian.cmxa /home/tolwiz/.opam/default/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cmxa /usr/lib/ocaml/threads/threads.cmxa -I /usr/lib/ocaml /home/tolwiz/.opam/default/lib/lwt/unix/lwt_unix.cmxa -I /home/tolwiz/.opam/default/lib/lwt/unix /home/tolwiz/.opam/default/lib/uri/services/uri_services.cmxa /home/tolwiz/.opam/default/lib/ipaddr/unix/ipaddr_unix.cmxa /home/tolwiz/.opam/default/lib/conduit-lwt-unix/conduit_lwt_unix.cmxa /home/tolwiz/.opam/default/lib/magic-mime/magic_mime_library.cmxa /home/tolwiz/.opam/default/lib/cohttp-lwt/cohttp_lwt.cmxa /home/tolwiz/.opam/default/lib/cohttp-lwt-unix/cohttp_lwt_unix.cmxa .server.eobjs/native/dune__exe__Server.cmx)
